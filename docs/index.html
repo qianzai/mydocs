@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bzm 文档</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="_media/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <script>
+    window.$docsify = {
+	  // logo: '/_media/aa.svg',
+	  name: 'Bzm 文档✍️',
+      repo: 'https://github.com/qianzai',
+      formatUpdated: '{YYYY}-{MM}-{DD}',
+      loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
+      subMaxLevel: 5,
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'
+       },
+      loadNavbar: true,
+      coverpage: true,
+      // auto2top: true, //当路线改变时，滚动到屏幕的顶部。
+      
+        // docsify-copy-code (defaults)
+      copyCode: {
+        buttonText : 'Copy ',
+        errorText  : 'Error',
+        successText: 'Copied'
+      },
+
+    // 编辑页面
+      plugins: [
+    function(hook, vm) {
+      hook.beforeEach(function(html) {
+        var url =
+          'https://github.com/qianzai/mydocs/blob/master/docs/' +
+          vm.route.file;
+        var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
+
+        return (
+          editHtml +
+          html +
+          '\n----\n' +
+          '🖊️上次更新：{docsify-updated}'
+        );
+      });
+    }
+  ]
+
+
+    }
+
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify"></script>
+
+  <!-- 复制到剪贴板 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+
+  <!-- Gitalk评论系统 -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '3491b177c91a31d69e21',
+      clientSecret: '1612535a09ded3676ee22b49f9639cb00c95996d',
+      repo: 'mydocs',
+      owner: 'qianzai',
+      admin: ['qianzai'],
+      title: location.href
+      // distractionFreeMode: false
+    })
+  </script> -->
+
+<!-- 代码高亮 -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+
+</body>
+</html>
