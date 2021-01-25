@@ -6,7 +6,7 @@
 
 >   是  Google	多年大规模容器管理技术 Borg的开源版本，由Go语言翻写。
 
-<img src="media/README.assets/iKNxfcSgdUDF394.png" alt="k8s图标" style="zoom:80%;" />
+![k8s图标](media/README.assets/iKNxfcSgdUDF394.png)
 
 ### Kubernetes 能做什么？
 
