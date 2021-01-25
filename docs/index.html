@@ -302,7 +302,10 @@
       plugins: [
     function(hook, vm) {
       hook.beforeEach(function(html) {
-        var url =
+        // var url =
+        //   'http://192.168.112.200/Bzm/mydocs/-/tree/master/docs/' +
+        //   vm.route.file;
+          var url =
           'https://github.com/qianzai/mydocs/tree/master/docs/' +
           vm.route.file;
         var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
@@ -341,23 +344,33 @@
   <!-- 复制到剪贴板 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 
-  <!-- Gitalk评论系统 -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
-
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      clientID: '3491b177c91a31d69e21',
-      clientSecret: '1612535a09ded3676ee22b49f9639cb00c95996d',
-      repo: 'mydocs',
-      owner: 'qianzai',
-      admin: ['qianzai'],
-      title: location.href
-      // distractionFreeMode: false
-    })
-  </script> -->
-
+<!-- Gitalk 评论系统 -->
+<link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css">
+<!-- Gitalk 评论系统 -->
+<script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.js"></script>
+<script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.min.js"></script>
+<script src="https://wugenqiang.gitee.io/notebook/plugin/md5.min.js"></script>
+<script>
+  // title_id需要初始化
+  window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';
+  const gitalk = new Gitalk({
+    clientID: '75c636472d8853b5e22a',
+    clientSecret: 'cf95f9eb8caacb03afea1c873ca698746d20fb61',
+    repo: 'mydocs',
+    owner: 'qianzai',
+    admin: ['qianzai'],
+    title: decodeURI(window.title_id),
+    distractionFreeMode: false,	// 是否添加全屏遮罩
+    id: md5(window.location.hash),	// 页面的唯一标识，gitalk 会根据这个标识自动创建的issue的标签,我们使用页面的相对路径作为标识
+    enableHotKey: true,	// 提交评论快捷键(cmd/ctrl + enter)
+  })
+  // 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
+  window.onhashchange = function (event) {
+    if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
+      location.reload()
+    }
+  }
+</script>
 
 <!-- 代码高亮 -->
 <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-bash.min.js"></script>
