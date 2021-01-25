@@ -111,7 +111,7 @@
     </script>
 ```
 
-![image-20200423103458042](界面2.assets/image-20200423103458042.png)
+![image-20200423103458042](media/README.assets/image-20200423103458042.png)
 
 ```html
 <div id="app" class="aa">
@@ -135,7 +135,7 @@
     </script>
 ```
 
-![image-20200423103625231](界面2.assets/image-20200423103625231.png)
+![image-20200423103625231](media/README.assets/image-20200423103625231.png)
 
 ```markdown
 # 总结:
@@ -172,7 +172,7 @@
     </script>
 ```
 
-![image-20200423111139362](界面2.assets/image-20200423111139362.png)
+![image-20200423111139362](media/README.assets/image-20200423111139362.png)
 
 ```markdown
 # 总结
@@ -209,7 +209,7 @@
     </script>
 ```
 
-![image-20200423111258664](界面2.assets/image-20200423111258664.png)
+![image-20200423111258664](media/README.assets/image-20200423111258664.png)
 
 ----
 
@@ -637,7 +637,7 @@
 </script>
 ```
 
-![](界面2.assets/双向绑定.gif)
+![](media/README.assets/双向绑定.gif)
 
 ```markdown
 # 总结
@@ -910,7 +910,7 @@
 
 > `生命周期钩子`   ====>  `生命周期函数`
 
-![img](界面2.assets/lifecycle.png)
+![img](media/README.assets/lifecycle.png)
 
 **Vue生命周期总结**
 
@@ -930,7 +930,7 @@
         }
 ```
 
-![image-20200425133440434](界面2.assets/image-20200425133440434.png)
+![image-20200425133440434](media/README.assets/image-20200425133440434.png)
 
 ```http
 		2.运行阶段
@@ -946,7 +946,7 @@
 		
 ```
 
-![image-20200425134348041](界面2.assets/image-20200425134348041.png)
+![image-20200425134348041](media/README.assets/image-20200425134348041.png)
 
 ```http
 3.销毁阶段
@@ -1520,7 +1520,7 @@ Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统。使用Vue 脚
 
 ##### 3.第一个vue脚手架项目
 
-![image-20200427161331450](界面2.assets/image-20200427161331450.png)
+![image-20200427161331450](media/README.assets/image-20200427161331450.png)
 
 [使用 CLI 搭建 Vue.js 项目](https://blog.csdn.net/Neuf_Soleil/article/details/88926242)
 
@@ -1581,7 +1581,7 @@ Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统。使用Vue 脚
 	 	2. 日后在使用vue Cli进行开发时不再书写html,编写的是一个个组件(组件后缀.vue结尾的文件),日后打包时vue cli会将组件编译成运行的html文件	  
 ```
 
-![image-20200427164404344](界面2.assets/image-20200427164404344.png)
+![image-20200427164404344](media/README.assets/image-20200427164404344.png)
 
 ##### 4.如何开发Vue脚手架
 
@@ -1625,11 +1625,11 @@ Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统。使用Vue 脚
 # 3.修改下index.html文件
 ```
 
-![image-20200428173625979](界面2.assets/image-20200428173625979.png)
+![image-20200428173625979](media/README.assets/image-20200428173625979.png)
 
-![image-20200428173444150](界面2.assets/image-20200428173444150.png)
+![image-20200428173444150](media/README.assets/image-20200428173444150.png)
 
 **启动测试**
 
-![image-20201220203017041](界面2.assets/image-20201220203017041.png)
+![image-20210120122117355](media/README.assets/image-20210120122117355.png)
 
