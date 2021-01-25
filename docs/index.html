@@ -87,7 +87,7 @@
     .markdown-section pre>code {
       color: #c0c3c1 !important;
       font-family: 'Inconsolata', consolas,"PingFang SC", "Microsoft YaHei", monospace !important;
-      background-color: #212121 !important;    //#accfff  #282c34
+      background-color: #212121 !important;  
       font-size: 15px !important;
       white-space: pre !important;
       line-height: 1.5 !important;
@@ -268,10 +268,8 @@
   	  name: 'Bzm 文档✍️',
       // nameLink: 'http://localhost:3000/#/README',
       repo: 'https://github.com/qianzai',
-      // homepage:
-      // 'https://raw.githubusercontent.com/qianzai/my-docs/main/docs/README.md',
       basePath:
-      '/docsify/',
+      '/docs/',
       formatUpdated: '{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}',
       loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
       subMaxLevel: 4,
@@ -306,11 +304,8 @@
       plugins: [
     function(hook, vm) {
       hook.beforeEach(function(html) {
-        // var url =
-        //   'http://192.168.112.200/Bzm/mydocs/-/tree/master/docs/' +
-        //   vm.route.file;
-          var url =
-          'https://github.com/qianzai/mydocs/blob/master/docs/docs/' +
+        var url =
+          'http://192.168.112.200/Bzm/mydocs/-/blob/master/docs/docs/' +
           vm.route.file;
         var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
 
@@ -348,12 +343,20 @@
   <!-- 复制到剪贴板 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 
+  <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+  <script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'qianzai_chat/community'
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/sidecar.v1.js" async defer></script>
+
 <!-- Gitalk 评论系统 -->
 <link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css">
 <!-- Gitalk 评论系统 -->
 <script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.js"></script>
 <script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.min.js"></script>
-<script src="https://wugenqiang.gitee.io/notebook/plugin/md5.min.js"></script>
+<script src="https://wugenqiang.gitee.io/notebook/plugin/md5.min.js"></script> 
 <script>
   // title_id需要初始化
   window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';
@@ -417,14 +420,6 @@
 <!-- alert 样式 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all' />
 
-<!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
-<script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'qianzai_chat/community'
-  };
-</script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/sidecar.v1.js" async defer></script>
-
 <!-- 复制提醒 -->
 <!-- <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script>
@@ -435,7 +430,7 @@
 </script> -->
 
 <!-- 看板娘 -->
-<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
 <script>
   L2Dwidget.init({
     "model": {
@@ -460,7 +455,7 @@
       "opacityOnHover": 0.2
     }
   });
-</script> -->
+</script>
 <!-- <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
 
 
