@@ -16,6 +16,5 @@ jobs:
         with:
             repository: BuZM/mydocs
             cookie: ${{ secrets.GITEE_COOKIE 
-             branch: master
-             directory: docs
-             https: true
+            directory: docs
+            https: true
