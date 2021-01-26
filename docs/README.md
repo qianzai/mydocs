@@ -20,12 +20,6 @@
 
 - [gitmoji](/document/GitHub/Gitmoji)
 
-11
-
-2
-
-
-
 
 
 
