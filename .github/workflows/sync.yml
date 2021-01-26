@@ -10,3 +10,9 @@ jobs:
         with:
           source-repo: "git@github.com:qianzai/mydocs.git"
           destination-repo: "git@gitee.com:BuZM/mydocs.git"
+    steps:
+      - name: reload
+        uses: mizuka-wu/gitee-pages-action@v1.0.0
+        with:
+            repository: mizuka/Mizuka
+            cookie: ${{ secrets.GITEE_COOKIE }}
