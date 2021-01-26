@@ -15,6 +15,6 @@ jobs:
         uses: mizuka-wu/gitee-pages-action@v1.0.0
         with:
             repository: BuZM/mydocs
-            cookie: ${{ secrets.GITEE_COOKIE 
+            cookie: ${{ secrets.GITEE_COOKIE }} 
             directory: docs
             https: true
