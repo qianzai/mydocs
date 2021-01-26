@@ -75,7 +75,7 @@
     .markdown-section pre:before {
       content: '';
       display: block;
-      background: url(https://gitee.com/wugenqiang/PictureBed/raw/master/images01/20200716201955.png);
+      background: url(_media/代码块头部图标.png);
       height: 30px;
       background-size: 40px;
       background-repeat: no-repeat;
@@ -266,23 +266,32 @@
     window.$docsify = {
 	  // logo: '/_media/icon.svg',
   	  name: 'Bzm 文档✍️',
-      // nameLink: 'http://localhost:3000/#/README',
+      nameLink: '/#/README',
       repo: 'https://github.com/qianzai',
+      
       formatUpdated: '{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}',
-      loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
       subMaxLevel: 4,
       loadNavbar: true,
       coverpage: true,
       // auto2top: true, //当路线改变时，滚动到屏幕的顶部。
-      alias: {
-      '/.*/_sidebar.md': '/_sidebar.md'
-       },
+      loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
+      // alias: {
+      // '/.*/_sidebar.md': '/_sidebar.md'
+      //  },
+
+      // 链接使用相对路径
+      relativePath:true,
 
       // 在找不到指定页面时加载
       notFoundPage: 'my404.md',
 
       // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间
       topMargin: 45, // default: 0
+
+      // 远程文档
+      remoteMarkdown: {
+        tag: 'remoteMarkdownUrl',
+      },
 
       count:{
         countable:true,
@@ -320,7 +329,7 @@
   // 添加页脚
   footer: {
         copy: '一个人可以走的很快，但一群人才能走的更远！',
-        auth: '<a href="https://github.com/qianzai/" target="_blank">🏷️ GitHub</a>',
+        auth: '<a href="/#/README" target="_blank">🏷️ Home</a>',
         pre: '<hr/>',
         style: 'text-align: left;',
       },
@@ -334,6 +343,13 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify"></script>
+
+   <!-- 实现离线化 -->
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 
   <!-- 搜索插件 -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
@@ -383,6 +399,10 @@
 <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-java.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-yaml.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-shell-session.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.min.js"></script>
+
+
 
 <!-- 图片缩放 - Zoom image -->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
@@ -435,6 +455,10 @@
       //jsonpath控制显示那个小萝莉模型，
       //(切换模型需要改动)
       jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+      // jsonPath: "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",
+      // jsonPath: "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
+
+
       "scale": 1
     },
     "display": {
@@ -455,7 +479,6 @@
   });
 </script>
 <!-- <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
-
 
 <!-- 添加页脚 -->
 <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/docsify-footer-enh.min.js"></script>
