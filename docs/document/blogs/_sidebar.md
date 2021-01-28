@@ -1,5 +1,2 @@
-- [T1](./T1)
-- [T2](T2)
 - [Gitee自动同步GitHub仓库](Gitee自动同步GitHub仓库)
-- [aa](/README.md)
 
