@@ -1,4 +1,0 @@
-- [Gitmoji](./Gitmoji.md)
-
-  
-

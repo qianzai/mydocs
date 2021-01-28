@@ -19,7 +19,7 @@
 - [🧰GitHub](/document/GitHub/)
   - [Gitmoji](/document/GitHub/Gitmoji.md)
 - [⚒️实用技巧](/document/实用技巧/)
-  - [Gitee自动同步GitHub仓库](/document/blogs/Gitee自动同步GitHub仓库.md)
+  - [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库.md)
 
 - [🔨 工具集](/document/工具集/)
 
