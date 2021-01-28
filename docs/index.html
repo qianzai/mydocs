@@ -17,6 +17,49 @@
 
   <style>
 
+     /*侧边栏*/
+     .sidebar {
+      padding-top: px;
+    }
+
+    aside.sidebar ul li {
+      margin: 0;
+      position: relative;
+    }
+
+    aside.sidebar ul li ul {
+      margin: 4px 0;
+    }
+
+    aside.sidebar ul li p {
+      padding-left: 22px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    aside.sidebar ul li a {
+      line-height: 35px;
+      font-size: 14px;
+      padding: 3px 0 3px 22px;
+    }
+
+    aside.sidebar ul li.active > a {
+      font-size: 16px !important;
+    }
+
+    aside.sidebar ul li.active > a:before {
+      content: '' !important;
+      position: absolute !important;
+      margin: 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+      top: 15px !important;
+      left: 0px !important;
+      border-radius: 50% !important;
+      /* background-color: #8ddacd !important; */
+      /* box-shadow: 0 0 0 3px rgba(151, 168, 241, 0.432) !important; */
+    }
+
     /*加重描述strong*/
     .markdown-section strong {
       color: rgb(239, 112, 96);
@@ -412,7 +455,7 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 <!-- 侧边栏风格 -->
 <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
 
 <!-- 字数统计 -->
 <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
