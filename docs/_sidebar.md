@@ -1,6 +1,6 @@
 - [🎨引言](/README.md)
 - [☕️Java](/document/Java/)
-  - [SpringBoot](/document/Java/Springboot)
+  - [SpringBoot](/document/Java/SpringBoot)
   - [SpringCloud](/document/Java/SpringCloud笔记)
   - [Maven](/document/Java/Maven)
 - [🧵中间件](/document/中间件/)
