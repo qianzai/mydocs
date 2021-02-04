@@ -67,3 +67,6 @@ http://{your_website}:{port}/linux/exec?cmd={cmd}&secret={secret}
 **一切配置完成后，网站自动更新成功**
 
 ![image-20210204102604320](media/使用WebHooks进行自动化部署.assets/image-20210204102604320.png)
+
+---
+
