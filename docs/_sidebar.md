@@ -17,7 +17,6 @@
 - [☸️云原生](/document/云原生/)
   - [Kubernetes](/document/云原生/Kubernetes)
 - [🌻前端](/document/前端/)
-  - [CSS](/document/前端/CSS/)
   - [Vue](/document/前端/Vue学习)
 - [🔗网络](/document/网络/)
 - [🧰GitHub](/document/GitHub/)

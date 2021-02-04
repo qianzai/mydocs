@@ -61,8 +61,7 @@ http://{your_website}:{port}/linux/exec?cmd={cmd}&secret={secret}
 - secret：密钥
 
 > [!TIP] 
-
-> 脚本地址要有执行权限，secret是项目中自定义的（默认bzm666）
+> 脚本要有执行权限，secret是项目中自定义的（默认bzm666）
 
 **一切配置完成后，网站自动更新成功**
 

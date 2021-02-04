@@ -13,7 +13,7 @@
 >   `J2EE`开发的一站式解决方案；
 
 ### 1.1. 微服务
-f
+
 [Microservices Guide](https://martinfowler.com/microservices/)
 
 [什么是微服务架构？](https://www.zhihu.com/question/65502802)
@@ -123,6 +123,12 @@ public class HelloController {
 
 #### 2.2.2. 启动器
 
+**场景启动器是一组方便的依赖描述符，可以包含在应用程序中。**
+
+官方关于[Starters](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter)的描述
+
+![image-20210204143255323](media/SpringBoot.assets/image-20210204143255323.png)
+
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -210,9 +216,11 @@ public @interface EnableAutoConfiguration {
 public @interface AutoConfigurationPackage {
 ```
 
->   **@import** ：`Spring`底层注解@import ， 给容器中导入一个组件
+> [!NOTE]
 >
->   `Registrar.class` 作用：**将主启动类的所在包及包下面所有子包**里面的所有组件扫描到`Spring`容器 ；
+> **@import** ：`Spring`底层注解@import ， 给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名
+>
+> `Registrar.class` 作用：**将主启动类的所在包及包下面所有子包**里面的所有组件扫描到`Spring`容器 ；
 
 ![image-20200622102722987](media/SpringBoot.assets/image-20200622102722987.png)
 
@@ -262,6 +270,9 @@ server:
 	<port>8081</port>
 </server>
 ```
+
+> [!TIP]能配置哪些内容呢？
+可以查看官方文档：[Common Application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties)
 
 ### 3.2. YAML语法：
 
@@ -420,7 +431,36 @@ public void contextLoads() {
 
 ### 3.4. 加载指定的配置文件
 
-#### 3.4.1. @PropertySource
+#### 3.4.1. @Bean
+
+>   将方法的返回值添加到容器中；
+
+- 容器中这个组件默认的id就是方法名
+- 默认是单实例的
+- 外部无论调用多少次都是之前注入到容器的单实例对象
+
+```java
+@Configuration(proxyBeanMethods = true)	///告诉SpringBoot这是一个配置类
+public class MyConfig {
+
+    @Bean	//给容器中添加组件
+    public HelloService helloService() {
+        return new HelloService();
+    }
+
+}
+```
+
+?>被`@Configuration`标注的类就是一个配置类，配置类也是一个组件
+
+- `Full`(proxyBeanMethods = true)：**保证每个@Bean方法被调用多少次返回的组件都是单实例的**
+-  `Lite`(proxyBeanMethods = false)：**每个@Bean方法被调用多少次返回的组件都是新创建的**
+
+> [!TIP]
+>
+> 如果在只是在容器中注册组件，而别人也不依赖他，一般使用`Lite`，反之使用`Full`
+
+#### 3.4.2. @PropertySource
 
 >   加载指定的配置文件；
 
@@ -457,7 +497,7 @@ public void contextLoads() {
     System.out.println(user);
 ```
 
-#### 3.4.2. @ImportResource：
+#### 3.4.3. @ImportResource：
 
 >   导入Spring的配置文件，让配置文件里面的内容生效；
 
@@ -468,22 +508,6 @@ public void contextLoads() {
 ```java
 @ImportResource(locations = {"classpath:beans.xml"})
 导入Spring的配置文件让其生效
-```
-
-#### 3.4.3. @Bean
-
->   将方法的返回值添加到容器中；**容器中这个组件默认的id就是方法名**
-
-```java
-@Configuration
-public class MyConfig {
-
-    @Bean
-    public HelloService helloService() {
-        return new HelloService();
-    }
-
-}
 ```
 
 ### 3.5. 配置文件占位符
@@ -625,13 +649,31 @@ java -jar spring-boot-02-config-02-0.0.1-SNAPSHOT.jar --server.port=8087  --serv
 
 ### 3.9. 自动配置
 
-#### 3.9.1. 配置文件能写什么？
+#### 3.9.1. 默认的包结构
+
+- - 主程序所在包及其下面的所有子包里面的组件都会被默认扫描进来
+  - 无需以前的包扫描配置
+  - 想要改变扫描路径，@SpringBootApplication(scanBasePackages=**"com.XXX"**)
+
+- - - 或者@ComponentScan 指定扫描路径
+
+```java
+@SpringBootApplication
+等同于
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan("com.bzm.boot")
+```
+
+
+
+#### 3.9.2. 配置文件能写什么？
 
 [配置文件能配置的属性参照](https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#common-application-properties)
 
 ![SpringBoot éç½®æ ·ä¾](https://user-gold-cdn.xitu.io/2019/4/4/169e4113e1eb1b1c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
-#### 3.9.2. 自动配置原理
+#### 3.9.3. 自动配置原理
 
 [自动配置原理](https://juejin.im/post/5ca4e19b51882543d3780464)
 
@@ -807,7 +849,15 @@ public static final String FACTORIES_RESOURCE_LOCATION = "META-INF/spring.factor
 
 每一个这样的 `xxxAutoConfiguration `类都是容器中的一个组件，都加入到容器中，用他们来做自动配置。上述的每一个自动配置类都有自动配置功能，也可在配置文件中自定义配置。
 
-#### 3.9.3. 举例说明 Http 编码自动配置原理
+#### 3.9.4. 举例说明 Http 编码自动配置原理
+
+**@ConditionalOnWebApplication** 
+
+Spring 底层 @Conditional 注解，根据不同的条件，如果满足指定的条件，整个配置类里面的配置就会生效；判断当前应用是否是 web 应用，如果是，当前配置类生效
+
+- @Conditional 接口结构层次
+
+  ![image-20210204163545659](media/SpringBoot.assets/image-20210204163545659.png)
 
 ```java
 @Configuration 
@@ -817,7 +867,6 @@ public static final String FACTORIES_RESOURCE_LOCATION = "META-INF/spring.factor
 // 启动指定类的 ConfigurationProperties 功能；将配置文件中对应的值和 ServerProperties 绑定起来；并把 ServerProperties 加入到 ioc 容器中
 
 @ConditionalOnWebApplication 
-// Spring 底层 @Conditional 注解，根据不同的条件，如果满足指定的条件，整个配置类里面的配置就会生效；判断当前应用是否是 web 应用，如果是，当前配置类生效
 
 @ConditionalOnClass(CharacterEncodingFilter.class) 
 // 判断当前项目有没有这个类 CharacterEncodingFilter；SpringMVC 中进行乱码解决的过滤器；
@@ -859,7 +908,7 @@ public class HttpEncodingAutoConfiguration {
 
 ![image-20200629091018321](media/SpringBoot.assets/image-20200629091018321.png)
 
-#### 3.9.4. 总结
+#### 3.9.5. 总结
 
 **1）、SpringBoot启动会加载大量的自动配置类**
 
@@ -904,7 +953,7 @@ xxxxProperties:封装配置文件中相关属性；
 
 我们怎么知道哪些自动配置类生效；
 
-**==我们可以通过启用  debug=true属性；来让控制台打印自动配置报告==**，这样我们就可以很方便的知道哪些自动配置类生效；
+**我们可以通过启用  debug=true属性；来让控制台打印自动配置报告**，这样我们就可以很方便的知道哪些自动配置类生效；
 
 ```java
 =========================
@@ -2978,15 +3027,40 @@ spring:
 
 
 
-## 9. Spring Boot与缓存
+## 9. SpringBoot与缓存
 
 
 
-## 10. Spring Boot与消息
+## 10. SpringBoot与消息
 
 
 
-## 11. 未完成...
+## 11. SpringBoot最佳实践
+
+- 引入场景依赖
+
+- - https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter
+
+- 查看自动配置了哪些（选做）
+
+- - 自己分析，引入场景对应的自动配置一般都生效了
+  - 配置文件中debug=true开启自动配置报告。Negative（不生效）\Positive（生效）
+
+- 是否需要修改
+
+- - 参照文档修改配置项
+
+- - - https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties
+    - 自己分析。xxxxProperties绑定了配置文件的哪些。
+
+- - 自定义加入或者替换组件
+
+- - - @Bean、@Component。。。
+
+- - 自定义器  **XXXXXCustomizer**；
+  - ......
+
+## 12. 未完成...
 
 -   [ ] [5.5、SpringMVC自动配置](# 5.5、SpringMVC自动配置)
 -   [ ] [6、CRUD-员工列表](#6、CRUD-员工列表)
