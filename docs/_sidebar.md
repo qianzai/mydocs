@@ -24,6 +24,8 @@
   - [Gitmoji](/document/GitHub/Gitmoji.md)
 - [⚒️实用技巧](/document/实用技巧/)
   - [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库.md)
+  - [使用WebHooks进行自动化部署](/document/实用技巧/使用WebHooks进行自动化部署)
+  - [IDEA使用](/document/实用技巧/IDEA使用)
 - [🔨 工具集](/document/工具集/)
   - [文档工具](/document/工具集/文档工具)
 
