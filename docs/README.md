@@ -17,7 +17,7 @@
 - GitHub：https://qianzai.github.io/mydocs/#/
 - Gitee：https://buzm.gitee.io/mydocs/#/
 
-> [Gitee自动同步GitHub仓库](https://qianzai.github.io/mydocs/#/document/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/Gitee%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5GitHub%E4%BB%93%E5%BA%93)，如果你也想这样做，可以参考这篇：
+> [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库)，如果你也想这样做，可以参考这篇：
 
 ## 🎉关于本站
 
