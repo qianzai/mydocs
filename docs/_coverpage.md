@@ -4,5 +4,5 @@
 
 > 一个学习记录文档
 
-[开始阅读](README.md) 
+[个人博客](https://bzm.ink/) [开始阅读](README.md) 
 
