@@ -14,6 +14,7 @@
     - [Nginx入门](/document/Linux/Nginx/Nginx入门)
     - [Nginx 信号集](/document/Linux/Nginx/Nginx信号集)
   - [正向代理与反向代理](/document/Linux/正向代理与反向代理)
+  - [Linux发送邮件mail](/document/Linux/Linux发送邮件mail)
 - [☸️云原生](/document/云原生/)
   - [Kubernetes](/document/云原生/Kubernetes)
 - [🌻前端](/document/前端/)
@@ -27,6 +28,7 @@
   - [IDEA使用](/document/实用技巧/IDEA使用)
 - [🔨 工具集](/document/工具集/)
   - [文档工具](/document/工具集/文档工具)
+  - [Visual Studio Code](/document/工具集/VisualStudioCode)
 
 
 
