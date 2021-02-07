@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Bzm 文档</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="Description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" href="_media/favicon.ico">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="icon" href="_media/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
 
     <!-- 支持 LaTex 语言 -->
-    <link rel="stylesheet" href="https://wugenqiang.js.org/src/css/iconfont.css">
+    <link
+      rel="stylesheet"
+      href="https://wugenqiang.js.org/src/css/iconfont.css"
+    />
 
     <!-- 友链 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/css/friends-link.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/css/friends-link.css"
+    />
 
     <!--自定义css-->
-    <link rel="stylesheet" href="_media/css/style.css">
-    <link rel="stylesheet" href="_media/css/markdown.css">
+    <link rel="stylesheet" href="_media/css/style.css" />
+    <link rel="stylesheet" href="_media/css/markdown.css" />
+  </head>
+  <body>
+    <div id="app">加载中...</div>
 
-</head>
-<body>
-<div id="app">加载中...</div>
-
-<div class="aside_container">
-    <div class="advertisement">
+    <div class="aside_container">
+      <div class="advertisement">
         <div class="Tencent_code">
-            <h4>公众号</h4>
-            <p style="font-size: 12px;">一起学习进步！</p>
-            <img src="_media/微信公众号.jpg" alt="EnjoyToShare"/>
+          <h4>公众号</h4>
+          <p style="font-size: 12px">一起学习进步！</p>
+          <img src="_media/微信公众号.jpg" alt="EnjoyToShare" />
         </div>
+      </div>
     </div>
-</div>
 
-<script>
-    window.$docsify = {
+    <script>
+      window.$docsify = {
         // logo: '/_media/icon.svg',
-        name: 'Bzm 文档✍️',
-        nameLink: '/#README',
-        repo: 'https://github.com/qianzai',
+        name: "Bzm 文档✍️",
+        nameLink: "/#README",
+        repo: "https://github.com/qianzai",
 
-        formatUpdated: '{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}',
+        formatUpdated: "{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}",
         subMaxLevel: 4,
         loadNavbar: true,
         coverpage: true,
@@ -54,193 +65,207 @@
         relativePath: true,
 
         // 在找不到指定页面时加载
-        notFoundPage: 'my404.md',
+        notFoundPage: "my404.md",
 
         // 让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间
         topMargin: 15, // default: 0
 
+        search: {
+          paths: "auto",
+          placeholder: "🔍 搜索",
+          noData: "😒 找不到结果",
+          // Headline depth, 1 - 6
+          depth: 2,
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        },
+
         // 警报配置
-        'flexible-alerts': {
-            style: 'flat',
+        "flexible-alerts": {
+          style: "flat",
 
-            note: {
-                label: {
-                    '/': '注释'
-                }
+          note: {
+            label: {
+              "/": "注释",
             },
-            tip: {
-                label: {
-                    '/': '提示'
-                }
+          },
+          tip: {
+            label: {
+              "/": "提示",
             },
-            //定制警报
-            warn: {
-                // localization
-                label: {
-                    '/en-GB/': 'Comment',
-                    '/': '警告'
-                },
-                icon: 'icon-warning',
-                className: 'warning'
+          },
+          //定制警报
+          warn: {
+            // localization
+            label: {
+              "/en-GB/": "Comment",
+              "/": "警告",
             },
-
+            icon: "icon-warning",
+            className: "warning",
+          },
         },
 
         // 远程文档
         remoteMarkdown: {
-            tag: 'remoteMarkdownUrl',
+          tag: "remoteMarkdownUrl",
         },
 
         count: {
-            countable: true,
-            fontsize: '0.9em',
-            color: 'rgb(90,90,90)',
-            language: 'chinese'
+          countable: true,
+          fontsize: "0.9em",
+          color: "rgb(90,90,90)",
+          language: "chinese",
         },
 
         // docsify-copy-code (defaults)
         copyCode: {
-            buttonText: 'Copy ',
-            errorText: 'Error',
-            successText: 'Copied'
+          buttonText: "Copy ",
+          errorText: "Error",
+          successText: "Copied",
         },
 
         // 编辑页面
         plugins: [
-            function (hook, vm) {
-                hook.beforeEach(function (html) {
-                    var url =
-                        'https://github.com/qianzai/mydocs/blob/master/docs/' +
-                        vm.route.file;
-                    var editHtml = '[📝 EDIT DOCUMENT](' + url + ')\n';
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              var url =
+                "https://github.com/qianzai/mydocs/blob/master/docs/" +
+                vm.route.file;
+              var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
 
-                    return (
-                        editHtml +
-                        html +
-                        '\n----\n' +
-                        '🖊️上次更新：{docsify-updated}'
-                    );
-                });
-            }
+              return (
+                editHtml + html + "\n----\n" + "🖊️上次更新：{docsify-updated}"
+              );
+            });
+          },
         ],
 
         // 添加页脚
         footer: {
-            copy: '一个人可以走的很快，但一群人才能走的更远！',
-            auth: '<a href="/#README" target="_blank">🏷️ Home</a>',
-            pre: '<hr/>',
-            style: 'text-align: left;',
+          copy: "一个人可以走的很快，但一群人才能走的更远！",
+          auth: '<a href="/#README" target="_blank">🏷️ Home</a>',
+          pre: "<hr/>",
+          style: "text-align: left;",
         },
+      };
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify"></script>
 
-    }
+    <!-- 实现离线化 -->
+    <!--  <script>-->
+    <!--    if (typeof navigator.serviceWorker !== 'undefined') {-->
+    <!--      navigator.serviceWorker.register('sw.js')-->
+    <!--    }-->
+    <!--  </script>-->
 
+    <!-- 搜索插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 
-</script>
-<!-- Docsify v4 -->
-<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-<script src="//unpkg.com/docsify"></script>
+    <!-- 复制到剪贴板 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 
-<!-- 实现离线化 -->
-<!--  <script>-->
-<!--    if (typeof navigator.serviceWorker !== 'undefined') {-->
-<!--      navigator.serviceWorker.register('sw.js')-->
-<!--    }-->
-<!--  </script>-->
+    <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: "qianzai_chat/community",
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/sidecar.v1.js"
+      async
+      defer
+    ></script>
 
-<!-- 搜索插件 -->
-<!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script> -->
+    <!-- Gitalk 评论系统 -->
+    <link
+      rel="stylesheet"
+      href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css"
+    />
 
-<!-- 复制到剪贴板 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.js"></script>
+    <script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.min.js"></script>
+    <script src="https://wugenqiang.gitee.io/notebook/plugin/md5.min.js"></script>
 
-<!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
-<script>
-    ((window.gitter = {}).chat = {}).options = {
-        room: 'qianzai_chat/community'
-    };
-</script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/sidecar.v1.js" async defer></script>
+    <script>
+      window.title_id = window.location.hash.match(/#(.*?)([?]|$)/)
+        ? window.location.hash.match(/#(.*?)([?]|$)/)[1]
+        : "/";
+      const gitalk = new Gitalk({
+        clientID: "75c636472d8853b5e22a",
+        clientSecret: "06d9a4a837bd1b49abba5caaf8984cf9b9b91e16",
+        repo: "mydocs",
+        owner: "qianzai",
+        admin: ["qianzai"],
+        title: decodeURI(window.title_id),
+        distractionFreeMode: false, // 是否添加全屏遮罩
+        id: md5(window.location.hash), // 页面的唯一标识，gitalk 会根据这个标识自动创建的issue的标签,我们使用页面的相对路径作为标识
+        enableHotKey: true, // 提交评论快捷键(cmd/ctrl + enter)
+      });
+      // 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
+      window.onhashchange = function (event) {
+        if (event.newURL.split("?")[0] !== event.oldURL.split("?")[0]) {
+          location.reload();
+        }
+      };
+    </script>
 
-<!-- Gitalk 评论系统 -->
-<!-- <link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css">
+    <!-- 代码高亮 -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-php.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-yaml.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-shell-session.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-nginx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-markdown.min.js"></script>
 
-<script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.js"></script>
-<script src="https://wugenqiang.gitee.io/notebook/plugin/gitalk.min.js"></script>
-<script src="https://wugenqiang.gitee.io/notebook/plugin/md5.min.js"></script>
+    <!--警报插件-->
+    <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
 
-<script>
-  window.title_id = window.location.hash.match(/#(.*?)([?]|$)/) ? window.location.hash.match(/#(.*?)([?]|$)/)[1] : '/';
-  const gitalk = new Gitalk({
-    clientID: '3491b177c91a31d69e21',
-    clientSecret: '87fa23bc45b44012dc71d7ac21dac8cc39404209',
-    repo: 'mydocs',
-    owner: 'qianzai',
-    admin: ['qianzai'],
-    title: decodeURI(window.title_id),
-    distractionFreeMode: false,	// 是否添加全屏遮罩
-    id: md5(window.location.hash),	// 页面的唯一标识，gitalk 会根据这个标识自动创建的issue的标签,我们使用页面的相对路径作为标识
-    enableHotKey: true,	// 提交评论快捷键(cmd/ctrl + enter)
-  })
-  // 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
-  window.onhashchange = function (event) {
-    if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
-      location.reload()
-    }
-  }
-</script> -->
+    <!-- 图片缩放 - Zoom image -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
-<!-- 代码高亮 -->
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-bash.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-php.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-java.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-yaml.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-shell-session.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/prism-markdown.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-nginx.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-markdown.min.js"></script>
+    <!-- 侧栏目录展开和折叠 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    <!-- 侧边栏风格 -->
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
+    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
 
-<!--警报插件-->
-<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
 
-<!-- 图片缩放 - Zoom image -->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 访问量统计 -->
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
 
-
-<!-- 侧栏目录展开和折叠 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-<!-- 侧边栏风格 -->
-<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
-<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
-
-
-<!-- 字数统计 -->
-<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-
-<!-- 访问量统计 -->
-<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
-
-<!-- 回到顶部功能 -->
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
+    <!-- 回到顶部功能 -->
+    <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
         $.goup({
-            trigger: 100,
-            bottomOffset: 52,
-            locationOffset: 25,
-            //title: 'TOP',
-            titleAsText: true
+          trigger: 100,
+          bottomOffset: 52,
+          locationOffset: 25,
+          //title: 'TOP',
+          titleAsText: true,
         });
-    });
-</script>
+      });
+    </script>
 
-<!-- alert 样式 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" type='text/css' media='all'/>
+    <!-- alert 样式 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css"
+      type="text/css"
+      media="all"
+    />
 
-<!-- 复制提醒 -->
-<!-- <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <!-- 复制提醒 -->
+    <!-- <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script>
   document.body.oncopy = function () {
     swal("复制成功 🎉",
@@ -248,42 +273,40 @@
             "success"); };
 </script> -->
 
-<!-- 看板娘 -->
-<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-<script>
-    L2Dwidget.init({
-        "model": {
-            //jsonpath控制显示那个小萝莉模型，
-            //(切换模型需要改动)
-            jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
-            // jsonPath: "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",
-            // jsonPath: "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
+    <!-- 看板娘 -->
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+      L2Dwidget.init({
+        model: {
+          //jsonpath控制显示那个小萝莉模型，
+          //(切换模型需要改动)
+          jsonPath:
+            "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+          // jsonPath: "https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json",
+          // jsonPath: "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
 
-
-            "scale": 1
+          scale: 1,
         },
-        "display": {
-            "position": "right", //看板娘的表现位置
-            "width": 70,  //小萝莉的宽度
-            "height": 140, //小萝莉的高度
-            "hOffset": 35,
-            "vOffset": -20
+        display: {
+          position: "right", //看板娘的表现位置
+          width: 70, //小萝莉的宽度
+          height: 140, //小萝莉的高度
+          hOffset: 35,
+          vOffset: -20,
         },
-        "mobile": {
-            "show": true,
-            "scale": 0.5
+        mobile: {
+          show: true,
+          scale: 0.5,
         },
-        "react": {
-            "opacityDefault": 0.7,
-            "opacityOnHover": 0.2
-        }
-    });
-</script>
-<!-- <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
+        react: {
+          opacityDefault: 0.7,
+          opacityOnHover: 0.2,
+        },
+      });
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
 
-<!-- 添加页脚 -->
-<script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/docsify-footer-enh.min.js"></script>
-
-
-</body>
+    <!-- 添加页脚 -->
+    <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/docsify-footer-enh.min.js"></script>
+  </body>
 </html>
