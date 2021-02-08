@@ -15,9 +15,10 @@
 ## 🎄访问入口：
 
 - 个人站点：http://docs.bzm.ink/#/
-
 - GitHub：https://qianzai.github.io/mydocs/#/
 - Gitee：https://buzm.gitee.io/mydocs/#/
+
+同时[GitHub pages](https://qianzai.github.io/mydocs/#/) 与 、[Gitee pages](https://buzm.gitee.io/mydocs/#/) 都可以访问
 
 > [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库)，如果你也想这样做，可以参考这篇：
 
@@ -40,4 +41,6 @@
 ### ☕️Java
 
 ## 📢特点
+
+
 
