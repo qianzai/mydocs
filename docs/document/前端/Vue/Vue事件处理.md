@@ -50,7 +50,7 @@
     </script>
 ```
 
-### prevent 
+### prevent
 
 !>用来阻止标签的默认行为
 
@@ -111,7 +111,7 @@
     </script>
 ```
 
-### once 
+### once
 
 !>让指定事件只触发一次
 
@@ -132,5 +132,37 @@
         },
       });
     </script>
+```
+
+## 按键修饰符
+
+!>**作用**：用来与键盘中按键事件绑定在一起，用来修饰特定的按键事件的修饰符
+
+**常用的按键码的别名：**
+
+- `.enter`
+- `.tab`
+- `.delete` (捕获“删除”和“退格”键)
+- `.esc`
+- `.space`
+- `.up`
+- `.down`
+- `.left`
+- `.right`
+
+### enter
+
+!>用来在触发回车按键之后触发的事件
+
+```html
+ <input type="text" v-model="msg" @keyup.enter="keyups">
+```
+
+### tab
+
+!>用来捕获到`tab`键执行到当前标签是才会触发
+
+```html
+<input type="text" @keyup.tab="keytabs">
 ```
 
