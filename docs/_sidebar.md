@@ -23,6 +23,7 @@
     - [Vue指令](/document/前端/Vue/Vue指令)
     - [Vue事件处理](/document/前端/Vue/Vue事件处理)
     - [Vue生命周期](/document/前端/Vue/Vue生命周期)
+    - [Vue中组件(Component)](/document/前端/Vue/Vue中组件(Component))
     - [Vue小案例](/document/前端/Vue/Vue小案例)
   - [Axios入门](/document/前端/Axios入门)
 - [🔗网络](/document/网络/)

@@ -15,18 +15,61 @@
 3. **beforeCreate：**生命周期中的第一个函数，Vue实例中还没有 Data el methods相关属性
 4. **初始化、注入&校验：**Vue实例初始化了data属性和methods中相关方法
 5. **created：**生命周期中第二个函数
+6. 判断“el”，“template”选项，然后再编译好模板
+7. **beforeMount：**生命周期中第三个函数
+8. **创建vm.$el并用其替换el”：**将创建好的模板，进行解析
+9. **mounted：**生命周期中第四个函数,该函数在执行过程中,已经将数据渲染到界面中并且已经更新页面
 
+```js
+		beforeCreate() {
+          console.log("beforeCreate: " + this.msg);
+        },
+        created() {
+          console.log("created: " + this.msg);
+        },
+        beforeMount() {
+          console.log(
+            "beforeMount: " + document.getElementById("sp").innerText
+          );
+        },
+        mounted() {
+          console.log("Mounted: " + document.getElementById("sp").innerText);
+        },
+```
 
+![image-20210211100054930](media/Vue生命周期.assets/image-20210211100054930.png)
 
 ## 运行阶段
 
+1. **beforeUpdate：**生命周期中第五个函数,该函数是data中数据发生变化时执行 这个事件执行时仅仅是Vue实例中data数据变化页面显示的依然是原始数据
+2. **updated：**生命周期中第六个函数,该函数执行时data中数据发生变化,页面中数据也发生了变化  页面中数据已经和data中数据一致
 
+```js
+  		beforeUpdate() {
+          console.log("beforeUpdate:" + this.msg);
+          console.log(
+            "beforeUpdate:" + document.getElementById("sp").innerText
+          );
+        },
+        updated() {
+          console.log("updated:" + this.msg);
+          console.log("updated:" + document.getElementById("sp").innerText);
+        },
+```
 
-
+![image-20200425134348041](media/Vue生命周期.assets/image-20200425134348041.png)
 
 ## 销毁阶段
 
+1. **beforeDestory：**生命周期第七个函数,该函数执行时,Vue中所有数据 methods componet 都没销毁
+2. **destoryed：**生命周期的第八个函数,该函数执行时,Vue实例彻底销毁
 
+```js
+  	  beforeDestory() {
+        },
+        destoryed() {
+        },
+```
 
 
 
