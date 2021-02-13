@@ -32,6 +32,7 @@
 - [⚒️实用技巧](/document/实用技巧/)
   - [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库.md)
   - [使用WebHooks进行自动化部署](/document/实用技巧/使用WebHooks进行自动化部署)
+  - [Jsdelivr免费CDN](/document/实用技巧/Jsdelivr免费CDN)
   - [定时备份](/document/实用技巧/定时备份)
   - [IDEA使用](/document/实用技巧/IDEA使用)
 - [🔨 工具集](/document/工具集/)
