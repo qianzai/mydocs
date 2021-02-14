@@ -11,7 +11,7 @@
     />
     <link
       rel="icon"
-      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//favicon.ico"
+      href="https://cdn.jsdelivr.net/gh/qianzai/mydocs@master/custom/_media/favicon.ico"
     />
     <link
       rel="stylesheet"
@@ -33,11 +33,11 @@
     <!--自定义css-->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//css/style.css"
+      href="https://cdn.jsdelivr.net/gh/qianzai/mydocs@master/custom/_media/css/style.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//css/markdown.css"
+      href="https://cdn.jsdelivr.net/gh/qianzai/mydocs@master/custom/_media/css/markdown.css"
     />
   </head>
   <body>
@@ -49,7 +49,7 @@
           <h4>公众号</h4>
           <p style="font-size: 12px">一起学习进步！</p>
           <img
-            src="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//微信公众号.jpg"
+            src="https://cdn.jsdelivr.net/gh/qianzai/mydocs@master/custom/_media/微信公众号.jpg"
             alt="EnjoyToShare"
           />
         </div>
@@ -62,6 +62,7 @@
         name: "Bzm 文档✍️",
         nameLink: "#README",
         repo: "https://github.com/qianzai",
+        // basePath: "/docs/",
         basePath: "https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/",
         formatUpdated: "{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}",
         subMaxLevel: 4,
@@ -141,8 +142,7 @@
           function (hook, vm) {
             hook.beforeEach(function (html) {
               var url =
-                "https://github.com/qianzai/mydocs/blob/master/docs/" +
-                vm.route.file;
+                "https://github.com/qianzai/docs/blob/main/" + vm.route.file;
               var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
 
               return (
