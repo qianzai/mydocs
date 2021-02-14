@@ -14,7 +14,7 @@ jobs:
       - name: reload
         uses: mizuka-wu/gitee-pages-action@v1.0.0
         with:
-            repository: BuZM/mydocs
-            cookie: ${{ secrets.GITEE_COOKIE }} 
-            directory: docs
-            https: true
+          repository: BuZM/mydocs
+          cookie: ${{ secrets.GITEE_COOKIE }}
+          # directory: docs
+          https: true
