@@ -30,4 +30,15 @@ VS Code 的中文（简体）语言包
 
 ![image-20210206111114106](media/VisualStudioCode.assets/image-20210206111114106.png)
 
+### Live Server   
+
+实时预览
+
+![aaaa134124412](media/VisualStudioCode.assets/aaaa134124412.png)
+
 ---
+
+## 快捷键
+
+[VSCode常用的快捷键——pink老师](https://www.bilibili.com/read/cv9699783)
+
