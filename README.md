@@ -1,6 +1,6 @@
 # 🎨引言
 
-> 本站建立初衷，记录一路走来学习的计算机知识，构建自己的知识体系！**如果觉得对你有帮助，欢迎到 [GitHub](https://github.com/qianzai/mydocs) 点个 Star !**
+!> 本站建立初衷，记录一路走来学习的计算机知识，构建自己的知识体系！**如果觉得对你有帮助，欢迎到 [GitHub](https://github.com/qianzai/mydocs) 点个 Star !**
 
 <img src="https://img.shields.io/github/stars/qianzai/mydocs" data-origin="https://img.shields.io/github/stars/qianzai/mydocs" alt=""> <img src="https://img.shields.io/github/forks/qianzai/mydocs" data-origin="https://img.shields.io/github/forks/qianzai/mydocs" alt="">
 
@@ -15,9 +15,10 @@
 ## 🎄访问入口：
 
 - 个人站点：http://docs.bzm.ink/#/
-
 - GitHub：https://qianzai.github.io/mydocs/#/
 - Gitee：https://buzm.gitee.io/mydocs/#/
+
+同时[GitHub pages](https://qianzai.github.io/mydocs/#/) 与 、[Gitee pages](https://buzm.gitee.io/mydocs/#/) 都可以访问
 
 > [Gitee自动同步GitHub仓库](/document/实用技巧/Gitee自动同步GitHub仓库)，如果你也想这样做，可以参考这篇：
 
@@ -40,4 +41,6 @@
 ### ☕️Java
 
 ## 📢特点
+
+
 

@@ -9,7 +9,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <link rel="icon" href="_media/favicon.ico" />
+    <link
+      rel="icon"
+      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//favicon.ico"
+    />
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
@@ -28,8 +31,14 @@
     />
 
     <!--自定义css-->
-    <link rel="stylesheet" href="_media/css/style.css" />
-    <link rel="stylesheet" href="_media/css/markdown.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//css/markdown.css"
+    />
   </head>
   <body>
     <div id="app">加载中...</div>
@@ -39,7 +48,10 @@
         <div class="Tencent_code">
           <h4>公众号</h4>
           <p style="font-size: 12px">一起学习进步！</p>
-          <img src="_media/微信公众号.jpg" alt="EnjoyToShare" />
+          <img
+            src="https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/_media//微信公众号.jpg"
+            alt="EnjoyToShare"
+          />
         </div>
       </div>
     </div>
@@ -50,7 +62,7 @@
         name: "Bzm 文档✍️",
         nameLink: "#README",
         repo: "https://github.com/qianzai",
-        // basePath: "https://cdn.jsdelivr.net/gh/qianzai/docs@main/",
+        basePath: "https://cdn.jsdelivr.net/gh/qianzai/docs@main/docs/",
         formatUpdated: "{YYYY}-{MM}-{DD}，{HH}:{mm}:{ss}",
         subMaxLevel: 4,
         loadNavbar: true,
@@ -134,7 +146,8 @@
               var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
 
               return (
-                editHtml + html + "\n----\n" + "🖊️上次更新：{docsify-updated}"
+                // editHtml + html + "\n----\n" + "🖊️上次更新：{docsify-updated}"
+                editHtml + html
               );
             });
           },
