@@ -1,0 +1,59 @@
+/*加重描述strong*/
+.markdown-section strong {
+    color: rgb(239, 112, 96);
+}
+
+/* 一级标题 */
+h1 span{
+    display:inline-block;
+    background: rgb(113, 206, 164);
+    color:#ffffff;
+    padding:  10px  16px;
+    border-radius:5px;
+    box-shadow: 1px 1px 3px black;
+}
+
+/*代码块头部图标 */
+.markdown-section pre:before {
+    content: '';
+    display: block;
+    background: url(../代码块头部图标.png);
+    height: 30px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #1C1C1C;
+    background-position: 10px 10px;
+}
+
+/*代码块背景*/
+p code{
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.markdown-section p.tip,
+.markdown-section tr:nth-child(1n) {
+    font-size: 16px !important;
+}
+
+.markdown-section h1 {
+    margin: 3rem 0 2rem 0;
+}
+
+.markdown-section h2 {
+    margin: 2rem 0 1rem;
+}
+img,
+pre {
+    border-radius: 5px;
+}
+
+/*滚动条样式 start*/
+/* 滚动条宽度 */
+::-webkit-scrollbar{width:5px;}
+/* 滚动条颜色 */
+::-webkit-scrollbar-thumb{
+    background: #33a9dc;
+    background-image: linear-gradient(#6ecd56, #33a9dc, #cb6196, #c16290);
+    border-radius: 2em;
+}
+
