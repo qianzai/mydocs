@@ -144,9 +144,12 @@
                 "https://github.com/qianzai/docs/blob/main/" + vm.route.file;
               var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
 
+              var url2 = "https://qianzai.github.io/mydocs/#" + vm.route.file;
+              var gitHubtHtml = "[ 💬 评论传送](" + url2 + ")\n";
+
               return (
                 // editHtml + html + "\n----\n" + "🖊️上次更新：{docsify-updated}"
-                editHtml + html
+                editHtml + html + "\n----\n" + gitHubtHtml
               );
             });
           },
